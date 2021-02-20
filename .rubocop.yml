@@ -1,10 +1,34 @@
+AllCops:
+  TargetRubyVersion: '3.0'
+  EnabledByDefault: true
+  Exclude:
+    - fillers_remover.gemspec
+    - Gemfile
+    - vendor/**/*
+
+Lint/ConstantResolution:
+  Ignore:
+    - DEFAULT_FILLERS
+    - PACK_TEMPLATE_BY_BIT_DEPTH
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/Copyright:
+  Enabled: false
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
 Layout/LineLength:
-  Max: 120
+  Max: 100
