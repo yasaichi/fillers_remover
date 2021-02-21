@@ -8,10 +8,7 @@ require_relative "fillers_remover/wav/reader"
 require_relative "fillers_remover/wav/writer"
 
 module FillersRemover
-  DEFAULT_FILLERS = %w[あのー 干支 えーっと そのー なんか まあ].freeze
-  public_constant :DEFAULT_FILLERS
-
-  def self.call(src:, dest:, transcript:, fillers: DEFAULT_FILLERS)
+  def self.call(src:, dest:, transcript:, fillers:)
     filler_recognitions = extract_filler_recognitions_from(
       ::File.read(transcript),
       fillers: fillers
